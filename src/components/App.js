@@ -45,7 +45,7 @@ class App extends React.Component{
         } else {
             // Removes state from REDUX
             this.props.signOut();
-            console.log('Working!!!');
+            console.log('Working!!asdsa!');
         }
     };
 
