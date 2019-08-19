@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { signIn, signOut } from '../actions';
+import { signIn, signOut } from './actions';
 
 class GoogleAuth extends React.Component{
     componentDidMount() {
@@ -18,16 +18,17 @@ class GoogleAuth extends React.Component{
 
     onAuthChange = (isSignedIn) => {
         if ( isSignedIn ) {
-
             const UserDetails = {
                 userId: this.auth.currentUser.get().getId(),
                 userName: this.auth.currentUser.get().getBasicProfile().getName(),
+                userEmail: this.auth.currentUser.get().getBasicProfile().getEmail(),
                 userImage: this.auth.currentUser.get().getBasicProfile().getImageUrl()
             };
-
+            // Saves state to REDUX
             this.props.signIn(
                 UserDetails.userId,
                 UserDetails.userName,
+                UserDetails.userEmail,
                 UserDetails.userImage
             );
         } else {
@@ -36,17 +37,19 @@ class GoogleAuth extends React.Component{
     };
 
     onSignInClick = () => {
-        this.auth.signIn({prompt: 'consent'});
+        this.auth.signIn();
+        // this.auth.signIn({prompt: 'consent'});
     };
 
-    onSignOutClick = () => {
+    onSignOutClick = (e) => {
+        e.preventDefault();
         this.auth.signOut();
     };
 
     renderAuthButton() {
         if( this.props.isSignedIn === null ){
             return (
-                <button className='ui blue google button'>
+                <button className='ui large fluid blue google button'>
                     <i className='google icon' />
                     Loading...
                 </button>
@@ -59,9 +62,9 @@ class GoogleAuth extends React.Component{
             );
         } else {
             return (
-                <button onClick={this.onSignInClick} className='ui blue google button'>
+                <button onClick={this.onSignInClick} className='ui large fluid blue google button'>
                     <i className='google icon' />
-                    Sign In
+                    Sign In with Google
                 </button>
             );
         }

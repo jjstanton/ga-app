@@ -83,19 +83,38 @@
     }
 }
 
+.loginpanel .attached.buttons .button.active{
+    background-color: #1678c2;
+    color: #fff;
+    text-shadow: none;
+}
 
 
 
 /* Custom CSS */
 
+.font20{
+    font-size: 20px !important;
+    margin-right: 20px !important;
+}
 
-#loginForm{
-    max-width: 500px;
-    margin: auto;
+
+
+
+div#root {
+    height: 100%;
+}
+
+.login-form, .signup-form{
+    max-width: 650px;
+    margin: auto !important;
+    top: 35%;
+    position: relative;
+    display: block !important;
+    transform: translateY(-50%);
 }
 
 .contentArea{
-    position: absolute;
     margin-left: 250px;
     padding: 30px;
 }
@@ -108,8 +127,46 @@
     padding: 0px 25px;
 }
 
-.ui.dropdown .menu {
-    left: -160px;
+.userMenu .menu {
+    width: 250px;
+    left: -200px !important;
+}
+
+.user-details .user-image {
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.user-details .user-image img {
+    width: 60px !important;
+    height: auto !important;
+}
+.user-details .user-content {
+    padding: 10px 0px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.user-details .user-content p {
+    display: inline-block;
+    max-width: 155px;
+    white-space: normal;
+    word-break: break-word;
+    font-size: 14px;
+    -webkit-user-select: text;
+}
+
+.user-details .user-content .user-name {
+    color: black;
+    padding: 5px 0px;
+    display: block;
+}
+
+.user-details .user-content .user-email {
+    color: dimgrey;
+    font-size: 14px;
+    display: block;
 }
 
 .side-menu-logo{
