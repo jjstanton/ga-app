@@ -4,7 +4,7 @@ import 'firebase/database';
 import 'firebase/firestore';
 
 const config = {
-    apiKey: "AIzaSyCVshTltQqFRxm659zbmh2hGgJB0ZhlNE4",
+    apiKey:"",
     authDomain: "ga-app-afa31.firebaseapp.com",
     databaseURL: "https://ga-app-afa31.firebaseio.com",
     projectId: "ga-app-afa31",
