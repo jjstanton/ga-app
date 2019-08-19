@@ -5,12 +5,12 @@ import 'firebase/firestore';
 
 const config = {
     apiKey:"",
-    authDomain: "ga-app-afa31.firebaseapp.com",
-    databaseURL: "https://ga-app-afa31.firebaseio.com",
-    projectId: "ga-app-afa31",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
     storageBucket: "",
-    messagingSenderId: "267911515460",
-    appId: "1:267911515460:web:a4bc8ac1fc4fbe94"
+    messagingSenderId: "",
+    appId: ""
 };
 
 class Firebase {
